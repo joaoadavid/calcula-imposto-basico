@@ -25,8 +25,11 @@ public class Individual extends TaxaPorPessoa {
 
 	@Override
 	public double taxa() {
-		
-		return gastoComSaude * 0.5;
+		if(getRendaAnual() < 20000.00) {
+			return getRendaAnual() * 0.15 -  gastoComSaude * 0.5;
+		}else{
+			return getRendaAnual() * 0.25 -  gastoComSaude * 0.5;
+		}
 	}
 
 }

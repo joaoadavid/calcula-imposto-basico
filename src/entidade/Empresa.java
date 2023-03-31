@@ -25,8 +25,12 @@ public class Empresa extends TaxaPorPessoa {
 
 	@Override
 	public double taxa() {
+	if(numeroDeFuncionarios >10) {
+		return getRendaAnual() * 0.14;
+	}else {
+		return getRendaAnual() * 0.16;
+	}
 	
-		return numeroDeFuncionarios;
 	}
 	
 	
